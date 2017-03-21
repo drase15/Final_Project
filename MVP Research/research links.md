@@ -3,10 +3,15 @@
 https://www.instructables.com/id/CNC-Z-AXIS-for-ARDUINO-projects-or-small-router-pr/
 http://roxen.github.io/polar-plotter/
 
+
+# Hardware
+
 ### EasyDriver options
 
 https://www.sparkfun.com/products/12779 (regular)
 https://www.sparkfun.com/products/12859 (Big)
+
+
 
 ### Stepper Motor Options
 
