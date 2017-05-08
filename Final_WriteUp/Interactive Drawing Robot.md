@@ -14,7 +14,7 @@ Light sensor, Switch, Stepper (x2), Big Easy Driver (x2), Camera slider Kit, Tur
 
 ## Schematic
 
-![alt text](http://imgur.com/a/Genci.jpg)
+![alt text](http://imgur.com/Bq1PaKg.jpg)
 
 ## Video demonstration of project
 
