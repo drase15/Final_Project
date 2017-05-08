@@ -17,3 +17,14 @@ Light sensor, Switch, Stepper (x2), Big Easy Driver (x2), Camera slider Kit, Tur
 ## Video demonstration of project
 
 https://www.youtube.com/watch?v=38Wgj_mB_Hc
+
+
+## Images of Project and Output
+
+![alt text](http://imgur.com/gELsMIe.jpg)
+![alt text](http://imgur.com/Og4lzdN.jpg)
+![alt text](http://imgur.com/rkRHqKk.jpg)
+![alt text](http://imgur.com/KhUFeLf.jpg)
+![alt text](http://imgur.com/4lIdmpU.jpg)
+![alt text](http://imgur.com/6E3ler0.jpg)
+![alt text](http://imgur.com/6PjZGz6.jpg)
