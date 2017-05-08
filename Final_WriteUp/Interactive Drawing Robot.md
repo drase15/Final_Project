@@ -10,12 +10,7 @@ By using two steppers, one that rotates the arm, one that controls the extension
 
 **Part List:
 
-Light sensor
-Switch
-Stepper (x2)
-Camera slider Kit
-Turntable Kit
-3D printed pen holder and gear head
+Light sensor, Switch, Stepper (x2), Big Easy Driver (x2), Camera slider Kit, Turntable Kit, 3D printed pen holder and gear head
 
 
 Video demonstration of project
