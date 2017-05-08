@@ -1,0 +1,101 @@
+#include <Servo.h>
+
+Servo myservo;
+int val; //light sensor value
+int DistanceExtend = 0;  // Record the number of steps we've taken
+int DistanceRotate = 0;  // Record the number of steps we've taken
+int Stepping = false;
+int buttonPin;
+
+const int turnMotorStep = 3;
+const int turnMotorDir = 2;
+const int extendMotorStep = 5;
+const int extendMotorDir = 4;
+
+const int clockwise = LOW;
+
+void setup()
+{
+  buttonPin = 8; //whatever pin your button is plugged into
+  pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(turnMotorDir, OUTPUT);
+  pinMode(turnMotorStep, OUTPUT);
+  digitalWrite(turnMotorDir, LOW);
+  digitalWrite(turnMotorStep, LOW);
+  pinMode(extendMotorDir, OUTPUT);
+  pinMode(extendMotorStep, OUTPUT);
+  digitalWrite(extendMotorDir, LOW);
+  digitalWrite(extendMotorStep, LOW);
+  myservo.attach(12);
+}
+
+void loop()
+{
+  val = analogRead(0);
+  val = map(val, 20, 500, 0, 240);
+  myservo.write(val);
+
+  //check button pressed, if so enter program condition (inside if statement)
+  if (digitalRead(buttonPin) == LOW) //functions based off of button pulling input pin LOW
+  {
+    digitalWrite(turnMotorStep, HIGH);
+    delayMicroseconds(500);
+    digitalWrite(turnMotorStep, LOW);
+    delayMicroseconds(500);
+    DistanceRotate = DistanceRotate + 1;   // record this step
+
+    // Check to see if we are at the end of our move
+    if (DistanceRotate >= 2000)
+    {
+      // We are! Reverse direction (invert DIR signal)
+      if (digitalRead(turnMotorDir) == LOW)
+      {
+        digitalWrite(turnMotorDir, HIGH);
+      }
+      else
+      {
+        digitalWrite(turnMotorDir, LOW);
+      }
+      // Reset our distance back to zero since we're
+      // starting a new move
+      DistanceRotate = 0;
+      // Now pause for half a second
+      delay(200);
+      
+      extendOneInch(); //function for the extension of the arm, using the second motor
+      DistanceExtend = DistanceExtend + 300;   // record this step
+
+      // Check to see if we are at the end of our move
+      if (DistanceExtend >= 2500)
+      {
+        // We are! Reverse direction (invert DIR signal)
+        if (digitalRead(extendMotorDir) == LOW)
+        {
+          digitalWrite(extendMotorDir, HIGH);
+                   
+        }
+        else
+        {
+          digitalWrite(extendMotorDir, LOW);
+        }
+        // Reset our distance back to zero since we're
+        // starting a new move
+        DistanceExtend = 0;
+        // Now pause for half a second
+        delay(200);
+
+      }
+    } // end of if distance1 == 1000
+  } // end of if button pressed
+}
+
+void extendOneInch() {
+int i = 0;
+  while ( i < 3000) {
+      digitalWrite(extendMotorStep, HIGH);
+      delayMicroseconds(50);
+      digitalWrite(extendMotorStep, LOW);
+      delayMicroseconds(50);
+      i++;
+  }
+} 
