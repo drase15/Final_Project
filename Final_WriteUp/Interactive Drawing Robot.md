@@ -12,7 +12,9 @@ By using two steppers, one that rotates the arm, one that controls the extension
 
 Light sensor, Switch, Stepper (x2), Big Easy Driver (x2), Camera slider Kit, Turntable Kit, 3D printed pen holder and gear head
 
+## Schematic
 
+![alt text](http://imgur.com/a/Genci.jpg)
 
 ## Video demonstration of project
 
